@@ -1,0 +1,22 @@
+<div *mobxAutorun>
+  <!-- <p>{{ store.value }}</p>
+  <button (click)="store.doSomething()">Action</button>
+  <h1>{{ store.filteredLists }}</h1> -->
+  <h1>Countdown</h1>
+  <h1>{{ store.values }}</h1>
+  <button (click)="store.doSomething(1)">Action</button>
+  <h1>-----Doubler--------</h1>
+  <h1>doubler: {{ doubler.value }}</h1>
+  <button (click)="increment()">Add Doubler</button>
+  <hr />
+  <input type="number" [(ngModel)]="value" /> {{ value }}
+  <button (click)="addItem()">Add item</button>
+  <button (click)="getTotal()">Get total</button>
+
+  <div>Total: {{ store.total }}</div>
+  <div>message: {{ store.message }}</div>
+
+  <div *ngFor="let item of store.items">
+    {{ item | json }}
+  </div>
+</div>

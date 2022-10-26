@@ -1,18 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { TableModule } from 'primeng/table';
+import { CheckboxModule } from 'primeng/checkbox';
+import { MobxAngularModule } from 'mobx-angular';
+import { AComComponent } from './acom/acom.component';
+
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    TableModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CheckboxModule,
+    MobxAngularModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, AComComponent],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

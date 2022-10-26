@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Product } from './product';
+import { ProductService } from './productservice.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'demo';
+  products: Product[];
+  checked: boolean = true;
+
+  constructor(private productService: ProductService) { }
+
+  ngOnInit() {
+      this.productService.getProductsSmall().then(data => this.products = data);
+  }
 }
